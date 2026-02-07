@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Modern Corporate Styling */
+  * {
+    @apply border-neutral-200;
+  }
+  
+  body {
+    @apply bg-neutral-50 text-neutral-900;
+  }
+  
+  input, textarea, select, button {
+    @apply outline-none focus:outline-none;
+  }
+  
+  /* Modern Input Styling */
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    @apply transition-all duration-200;
+  }
+  
+  input:focus:not([type="checkbox"]):not([type="radio"]),
+  textarea:focus,
+  select:focus {
+    @apply ring-2 ring-primary-500 ring-opacity-50 border-primary-500;
+  }
+  
+  /* Ensure dropdown options have proper text color */
+  select option {
+    @apply text-neutral-900 bg-white;
+  }
+  
+  /* Fix for browsers that don't respect option styling */
+  select {
+    color: #171717 !important; /* neutral-900 */
+    background-color: #ffffff !important; /* white */
+  }
+  
+  /* Force dropdown text color in all states */
+  select:focus {
+    color: #171717 !important;
+  }
+  
+  /* Ensure placeholder/default option text is visible */
+  select option[value=""] {
+    color: #737373 !important; /* neutral-500 for placeholder */
+  }
+  
+  select option:not([value=""]) {
+    color: #171717 !important; /* neutral-900 for actual options */
+  }
+  
+  /* Additional browser-specific fixes */
+  select::-webkit-input-placeholder {
+    color: #737373 !important;
+  }
+  
+  select::-moz-placeholder {
+    color: #737373 !important;
+  }
+  
+  select:-ms-input-placeholder {
+    color: #737373 !important;
+  }
+  
+  select::placeholder {
+    color: #737373 !important;
+  }
+  
+  /* Modern Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-400;
+  }
+}
+
+@layer components {
+  /* Modern Button Styles */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-neutral-50 text-primary-600 font-medium px-4 py-2 rounded-lg border border-primary-600 transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent hover:bg-neutral-50 text-neutral-700 font-medium px-4 py-2 rounded-lg border border-neutral-300 transition-all duration-200;
+  }
+  
+  /* Modern Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-neutral-200 p-6 transition-all duration-200 hover:shadow-md;
+  }
+  
+  /* Modern Input Styles */
+  .input-modern {
+    @apply w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white;
+  }
+  
+  /* Modern Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-primary {
+    @apply bg-primary-100 text-primary-700;
+  }
+  
+  .badge-success {
+    @apply bg-green-100 text-green-700;
+  }
+  
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-700;
+  }
+  
+  .badge-danger {
+    @apply bg-red-100 text-red-700;
+  }
+  
+  /* Dropdown fix */
+  .dropdown-fix {
+    color: #171717 !important;
+    background-color: #ffffff !important;
+  }
+  
+  .dropdown-fix:focus {
+    color: #171717 !important;
+  }
+  
+  .dropdown-fix option {
+    color: #171717 !important;
+    background-color: #ffffff !important;
+  }
+  
+  .dropdown-fix option[value=""] {
+    color: #737373 !important;
+  }
+  
+  /* Force all select elements to have proper styling */
+  select, 
+  select.dropdown-fix,
+  .dropdown-fix select {
+    color: #171717 !important;
+    background-color: #ffffff !important;
+  }
+  
+  /* Webkit specific fixes for Safari/Chrome */
+  select::-webkit-appearance {
+    -webkit-appearance: menulist;
+  }
+  
+  /* Firefox specific fixes */
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #171717;
+  }
+  
+  /* Modern Table Styles */
+  .table-modern {
+    @apply w-full border-collapse;
+  }
+  
+  .table-modern thead {
+    @apply bg-neutral-50 border-b border-neutral-200;
+  }
+  
+  .table-modern th {
+    @apply px-6 py-3 text-left text-xs font-semibold text-neutral-700 uppercase tracking-wider;
+  }
+  
+  .table-modern td {
+    @apply px-6 py-4 text-sm text-neutral-900 border-b border-neutral-100;
+  }
+  
+  .table-modern tbody tr {
+    @apply hover:bg-neutral-50 transition-colors duration-150;
+  }
+}
