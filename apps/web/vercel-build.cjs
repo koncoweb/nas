@@ -43,13 +43,9 @@ try {
     console.warn('⚠️  Migrations will run on first application start');
   }
 
-  // 4. Run React Router build using local installation
+  // 4. Run Vite build (React Router uses Vite under the hood)
   console.log('\n🏗️  Building React Router application...');
-  const buildCommand = process.platform === 'win32' 
-    ? 'node_modules\\.bin\\react-router.cmd build'
-    : 'node_modules/.bin/react-router build';
-  
-  execSync(buildCommand, { 
+  execSync('npx vite build --config vite.config.ts', { 
     stdio: 'inherit',
     shell: true
   });
