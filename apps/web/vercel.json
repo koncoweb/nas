@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build && node scripts/migrate.js",
+  "buildCommand": "npx react-router build && node scripts/migrate.js",
   "outputDirectory": "build/client",
   "framework": null,
   "installCommand": "npm install --legacy-peer-deps",
