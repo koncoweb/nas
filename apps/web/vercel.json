@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "node vercel-build.js",
+  "buildCommand": "node vercel-build.cjs",
   "outputDirectory": "build/client",
   "framework": null,
   "installCommand": "npm install --legacy-peer-deps",
