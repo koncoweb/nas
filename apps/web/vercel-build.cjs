@@ -43,9 +43,15 @@ try {
     console.warn('⚠️  Migrations will run on first application start');
   }
 
-  // 4. Run React Router build using the dev package
+  // 4. Run React Router build using npx with explicit package
   console.log('\n🏗️  Building React Router application...');
-  execSync('node node_modules/@react-router/dev/dist/cli.js build', { stdio: 'inherit' });
+  execSync('npx --yes @react-router/dev@^7.6.0 build', { 
+    stdio: 'inherit',
+    env: { 
+      ...process.env,
+      PATH: `${process.cwd()}/node_modules/.bin:${process.env.PATH}`
+    }
+  });
   console.log('✅ React Router build completed');
 
   // 5. Verify build directories
