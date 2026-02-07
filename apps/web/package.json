@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "react-router dev",
-		"build": "node node_modules/vite/bin/vite.js build",
+		"build": "npx --no-install vite build",
 		"start": "react-router-serve ./build/server/index.js",
 		"typecheck": "react-router typegen && tsc --noEmit",
 		"preview": "npm run build && npm run start",
