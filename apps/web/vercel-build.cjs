@@ -25,10 +25,9 @@ try {
     console.log('✅ All required environment variables present');
   }
 
-  // 2. Install dependencies
-  console.log('\n📦 Installing dependencies...');
-  execSync('npm install', { stdio: 'inherit' });
-  console.log('✅ Dependencies installed');
+  // 2. Skip dependency installation (Vercel already handles this)
+  console.log('\n📦 Dependencies already installed by Vercel');
+  console.log('✅ Skipping npm install');
 
   // 3. Run database migrations
   console.log('\n🗄️  Running database migrations...');
@@ -230,7 +229,7 @@ dist
 
   // 9. Display build summary
   console.log('\n📊 Build Summary:');
-  console.log('   ✅ Dependencies installed');
+  console.log('   ✅ Environment variables validated');
   console.log('   ✅ Database migrations executed');
   console.log('   ✅ React Router build completed');
   console.log('   ✅ Vercel function created');
