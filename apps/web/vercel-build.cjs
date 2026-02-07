@@ -43,14 +43,15 @@ try {
     console.warn('⚠️  Migrations will run on first application start');
   }
 
-  // 4. Run React Router build using npx with explicit package
+  // 4. Run React Router build using local installation
   console.log('\n🏗️  Building React Router application...');
-  execSync('npx --yes @react-router/dev@^7.6.0 build', { 
+  const buildCommand = process.platform === 'win32' 
+    ? 'node_modules\\.bin\\react-router.cmd build'
+    : 'node_modules/.bin/react-router build';
+  
+  execSync(buildCommand, { 
     stdio: 'inherit',
-    env: { 
-      ...process.env,
-      PATH: `${process.cwd()}/node_modules/.bin:${process.env.PATH}`
-    }
+    shell: true
   });
   console.log('✅ React Router build completed');
 
