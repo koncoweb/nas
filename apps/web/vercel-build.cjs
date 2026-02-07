@@ -40,12 +40,12 @@ try {
   } catch (migrationError) {
     console.error('❌ Migration failed:', migrationError.message);
     console.warn('⚠️  Continuing build despite migration failure');
-    console.warn('⚠️  You may need to run migrations manually after deployment');
+    console.warn('⚠️  Migrations will run on first application start');
   }
 
   // 4. Run React Router build
   console.log('\n🏗️  Building React Router application...');
-  execSync('npm run build', { stdio: 'inherit' });
+  execSync('npx react-router build', { stdio: 'inherit' });
   console.log('✅ React Router build completed');
 
   // 5. Verify build directories
