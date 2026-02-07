@@ -3,7 +3,7 @@
   "buildCommand": "npm run build && node scripts/migrate.js",
   "outputDirectory": "build/client",
   "framework": null,
-  "installCommand": "npm install",
+  "installCommand": "npm install --legacy-peer-deps",
   "headers": [
     {
       "source": "/build/client/(.*)",
