@@ -45,7 +45,7 @@ try {
 
   // 4. Run React Router build
   console.log('\n🏗️  Building React Router application...');
-  execSync('npx react-router build', { stdio: 'inherit' });
+  execSync('./node_modules/.bin/react-router build', { stdio: 'inherit' });
   console.log('✅ React Router build completed');
 
   // 5. Verify build directories
