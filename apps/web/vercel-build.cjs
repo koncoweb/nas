@@ -43,9 +43,9 @@ try {
     console.warn('⚠️  Migrations will run on first application start');
   }
 
-  // 4. Run React Router build
+  // 4. Run React Router build using the dev package
   console.log('\n🏗️  Building React Router application...');
-  execSync('./node_modules/.bin/react-router build', { stdio: 'inherit' });
+  execSync('node node_modules/@react-router/dev/dist/cli.js build', { stdio: 'inherit' });
   console.log('✅ React Router build completed');
 
   // 5. Verify build directories
